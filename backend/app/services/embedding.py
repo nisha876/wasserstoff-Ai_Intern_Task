@@ -1,9 +1,8 @@
-import os
 from langchain_community.embeddings import OpenAIEmbeddings
+from typing import List
 
-# Ensure the key is picked up
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+# Create the embedder (uses the env var OPENAI_API_KEY automatically)
+embedder = OpenAIEmbeddings()
 
-def embed(text):
-    model = OpenAIEmbeddings()
-    return model.embed_query(text)
+def embed(text: str) -> List[float]:
+    return embedder.embed_query(text)
