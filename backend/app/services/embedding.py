@@ -1,7 +1,9 @@
+import os
 from langchain_community.embeddings import OpenAIEmbeddings
 
+# Ensure the key is picked up
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
-model = SentenceTransformer('all-MiniLM-L6-v2')  # Small and fast
-
-def embed(text: str):
-    return model.encode(text).tolist()
+def embed(text):
+    model = OpenAIEmbeddings()
+    return model.embed_query(text)
