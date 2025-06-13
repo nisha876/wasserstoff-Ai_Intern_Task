@@ -5,8 +5,13 @@ pydantic
 PyMuPDF
 pytesseract
 pdf2image
+chroma
 openai
+tqdm
 streamlit
+sentence-transformers
+torch
 requests
 Pillow
 chromadb
+langchain-community  # ✅ add this
