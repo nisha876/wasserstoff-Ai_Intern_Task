@@ -1,4 +1,5 @@
-from sentence_transformers import SentenceTransformer
+from langchain_community.embeddings import OpenAIEmbeddings
+
 
 model = SentenceTransformer('all-MiniLM-L6-v2')  # Small and fast
 
